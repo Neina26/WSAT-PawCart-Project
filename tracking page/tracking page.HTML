@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawCart Order Tracking</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img src="./system.logo.jpg" alt="logo" class="img-fluid me-2 mt-1" style="width: 50px; height: 50px;" />
+            <a class="navbar-brand" href="#">PawCart</a>         
+                <div class="ml-auto d-flex w-50">
+                    <input type="text" class="form-control me-2" placeholder="Search your order">
+                    <button class="btn btn-outline-black">Search</button>
+                    <span class="text-primary font-weight-bold"></span>
+                </div>
+                
+                <div class="ml-auto d-flex">
+                    <img src="./shopping-cart.png" alt="Cart" class="img-fluid mr-3" style="width: 30px; height: 30px;">
+                    <img src="./user (1).png" alt="User" class="img-fluid" style="width: 30px; height: 30px;">
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="tracking-container">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+            <div class="d-flex justify-content-between">
+               
+                <div class="icon-box"><img src="./package.png" alt="package" style="width: 40px;"></div>
+                <div class="icon-box"><img src="./shipped.png" alt="shipped" style="width: 40px;"></div>
+                <div class="icon-box"><img src="./delivery icon.png" alt="Truck Icon" style="width: 40px;"></div>
+            </div>
+            <div class="progress-line d-flex align-items-center">
+                <div class="dot"></div>
+                <div class="line"></div>
+                <div class="dot"></div>
+                <div class="line"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>    
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="bg-light p-3 border border-dark h-100">
+                        <p><strong>Shipping Courier:</strong> XYZ Courier</p>
+                        <p><strong>Date of Order:</strong> 2024-09-21</p>
+                        <p><strong>Date of Arrival:</strong> 2024-09-24</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="bg-light p-3 border border-dark">
+                        <ul class="timeline">
+                            <li><strong>Delivered:</strong> 2024-09-24 06:00 PM</li>
+                            <li><strong>Out for delivery:</strong> 2024-09-24 12:05 PM</li>
+                            <li><strong>Shipped:</strong> 2024-09-23 09:00 AM</li>
+                            <li><strong>Order Processed:</strong> 2024-09-22 12:00 PM</li>
+                            <li><strong>Payment Confirmed:</strong> 2024-09-22 10:05 AM</li>
+                            <li><strong>Order Placed:</strong> 2024-09-21 10:00 AM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer bg-light py-3 border border-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-start align-items-center">
+                    <a href="#faq-section" class="btn btn-outline-dark">FAQs</a>
+                </div>
+                
+                <div class="col-md-4 d-flex flex-column justify-content-center align-items-center text-center">
+                    <button class="btn btn-outline-dark btn-sm">PawCart@gmail.com | 09292293118</button>
+                </div>
+            
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <button class="btn btn-outline-light" type="button">
+                        <img src="./message.png" alt="message button" style="width: 30px; height: 30px;" />
+                    </button>
+                    <button class="btn btn-sm ml-2" type="button">
+                    </button>
+                    <button class="btn btn-sm ml-2" type="button">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
