@@ -1,12 +1,24 @@
 [
-    {
-        "id": 1,
-        "email": "user1@example.com",
-        "password": "password123"
-    },
-    {
-        "id": 2,
-        "email": "user2@example.com",
-        "password": "password456"
-    }
+  {
+    "id": 1,
+    "email": "user1@example.com",
+    "password": "password123"
+  },
+  {
+    "id": 2,
+    "email": "user2@example.com",
+    "password": "password456"
+  },
+  {
+    "id": 3,
+    "name": " test-stores",
+    "email": "anthonyquitay@gmail.com",
+    "password": "1234"
+  },
+  {
+    "id": 4,
+    "name": "test2",
+    "email": "quitay.anthony@gmail.com",
+    "password": "12345"
+  }
 ]

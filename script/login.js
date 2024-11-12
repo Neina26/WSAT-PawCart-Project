@@ -50,9 +50,9 @@ function authenticate(email, password) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Server response:', data); // Debugging step
         if (data.success) {
             alert('Login successful!');
+            window.location.href = 'http://127.0.0.1:3000/index.html';
         } else {
             alert('Login failed: ' + data.message);
         }
