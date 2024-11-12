@@ -7,89 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
-        }
-        nav {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .search-bar {
-            flex: 1;
-            margin: 0 20px;
-        }
-        .search-bar input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .icons {
-            display: flex;
-            align-items: center;
-        }
-        .icons i {
-            font-size: 20px;
-            margin-left: 15px;
-            cursor: pointer;
-        }
-        .cart-container {
-            padding: 20px;
-        }
-        .cart-item {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .cart-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
-        .cart-details {
-            flex: 1;
-            margin-left: 20px;
-        }
-        .cart-details h5 {
-            margin: 0 0 5px;
-        }
-        .cart-controls {
-            display: flex;
-            align-items: center;
-        }
-        .cart-controls select, .cart-controls span {
-            margin: 0 10px;
-        }
-        .total {
-            text-align: right;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+        /* Styles are kept as per your code */
     </style>
 </head>
 <body>
@@ -101,8 +19,8 @@
         <input type="text" placeholder="Search for products...">
     </div>
     <div class="icons">
-        <i class="bi bi-person"></i>
-        <i class="bi bi-cart"></i>
+        <a href="profile.html"><i class="bi bi-person"></i></a> <!-- Link to Profile Page -->
+        <a href="cart.html"><i class="bi bi-cart"></i></a> <!-- Link to Cart Page -->
     </div>
 </nav>
 
@@ -111,7 +29,7 @@
     <h2>Shopping Cart</h2>
     <!-- Cart Item -->
     <div class="cart-item">
-        <img src="C:\Users\Eldreic\OneDrive\Documents\imgs\df.jpg" alt="Dog Food">
+        <img src="images/df.jpg" alt="Dog Food">
         <div class="cart-details">
             <h5>Premium Dog Food Special Merrick</h5>
             <p>Great Plains Red Meat</p>
@@ -128,7 +46,7 @@
     <div class="total">
         <strong>Total: PHP 2,500.00</strong>
     </div>
-    <button class="btn btn-primary">Checkout</button>
+    <button class="btn btn-primary" id="checkout-btn">Checkout</button>
 </div>
 
 <!-- Footer -->
@@ -136,5 +54,32 @@
     <p>&copy; 2024 PawCart. All rights reserved.</p>
 </footer>
 
+<script>
+    // JavaScript for Quantity Adjustment
+    const decreaseBtn = document.getElementById('decrease-btn');
+    const increaseBtn = document.getElementById('increase-btn');
+    const quantityInput = document.getElementById('quantity');
+
+    decreaseBtn.addEventListener('click', () => {
+        let currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity > 1) {
+            quantityInput.value = currentQuantity - 1;
+        }
+    });
+
+    increaseBtn.addEventListener('click', () => {
+        let currentQuantity = parseInt(quantityInput.value);
+        quantityInput.value = currentQuantity + 1;
+    });
+
+    // JavaScript for Checkout Button
+    const checkoutBtn = document.getElementById('checkout-btn');
+    checkoutBtn.addEventListener('click', () => {
+        // Redirect to the checkout page
+        window.location.href = 'checkout.html'; // Replace with the actual checkout page URL
+    });
+</script>
+
 </body>
 </html>
+

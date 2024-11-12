@@ -3218,6 +3218,8 @@ textarea.form-control-lg {
   color: var(--bs-btn-hover-color);
 }
 
+.email-reminder
+
 .btn-lg, .btn-group-lg > .btn {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
@@ -10957,4 +10959,9 @@ header-page {
   color: white;
   text-align: center;
   padding: 100px 0;
+}
+
+#email-reminder-text {
+  font-size: 0.85rem;
+  color: #333;
 }
