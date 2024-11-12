@@ -1,259 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Food Category</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Food Category</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-        <style>
-            body {
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        body {
             background: linear-gradient(to top right, #d39a71, #a39c93);
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">PAWCART</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Food Categories</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#wet-food">Wet Food</a></li>
-                                <li><a class="dropdown-item" href="#dry-food">Dry Food</a></li>
-                                <li><a class="dropdown-item" href="#treats">Treats</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-        <!-- Header-->
-        <header class="py-5 header-page">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-dark brown">
-                    <h1 class="display-4 fw-bolder">Food Categories</h1>
-                    <p class="lead fw-normal text-white-70 mb-0">Explore a wide range of food options for your pets</p>
-                </div>
-            </div>
-        </header>
-     
-        <!-- Section for Food Categories -->
-        <section class="py-5" id="food-section">
-            <div class="container px-4 px-lg-5 mt-5">
-                <h2 id="wet-food">Wet Food</h2>
-<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-    <!-- Wet Food Item 1 -->
-    <div class="col mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\wetfoodall.jpg" alt="Wet Food" />
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <h5 class="fw-bolder">Wet Food Product</h5>
-                    $20.00
-                </div>
-            </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+        }
+        /* Notification styling */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1000;
+        }
+        .notification.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#!">PAWCART</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Food Categories</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#wet-food">Wet Food</a></li>
+                            <li><a class="dropdown-item" href="#dry-food">Dry Food</a></li>
+                            <li><a class="dropdown-item" href="#treats">Treats</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
             </div>
         </div>
-    </div>
-    
-    <!-- Wet Food Item 2: Beef Wet Food -->
-    <div class="col mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\wetfood.jpg" alt="Beef Wet Food" />
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <h5 class="fw-bolder">Beef Wet Food</h5>
-                    $22.00
-                </div>
-            </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-            </div>
-        </div>
-    </div>
+    </nav>
 
-    <!-- Wet Food Item 3: Liver Wet Food -->
-    <div class="col mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\liverwetfood.jpg" alt="Liver Wet Food" />
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <h5 class="fw-bolder">Liver Wet Food</h5>
-                    $18.00
-                </div>
-            </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+    <header class="py-5 header-page">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-dark brown">
+                <h1 class="display-4 fw-bolder">Food Categories</h1>
+                <p class="lead fw-normal text-white-70 mb-0">Explore a wide range of food options for your pets</p>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- Wet Food Item 4: Chicken Wet Food -->
-    <div class="col mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\cknwetfood.jpg" alt="Chicken Wet Food" />
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <h5 class="fw-bolder">Chicken Wet Food</h5>
-                    $21.00
-                </div>
-            </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Dry Food Section -->
-<h2 id="dry-food">Dry Food</h2>
-<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-    <!-- Dry Food Item 1 -->
-    <div class="col mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\dryfoodall.jpg" alt="Dry Food" />
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <h5 class="fw-bolder">Dry Food Product</h5>
-                    $30.00
-                </div>
-            </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-            </div>
-        </div>
-    </div>
-    <!-- Dry Food Item 2: Freeze Dried Jerky -->
-    <div class="col mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\beefjerkydf.jpg" alt="Freeze Dried Jerky" />
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <h5 class="fw-bolder">Freeze Dried Jerky</h5>
-                    $35.00
-                </div>
-            </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-            </div>
-        </div>
-    </div>
-    <!-- Dry Food Item 3: Dried Toppers -->
-    <div class="col mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\foodtop.jpg" alt="Dried Toppers" />
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <h5 class="fw-bolder">Dried Toppers</h5>
-                    $28.00
-                </div>
-            </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-            </div>
-        </div>
-    </div>
-    <!-- Dry Food Item 4: Smoked Salmon Toppers -->
-    <div class="col mb-5">
-        <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\salmondf.jpg" alt="Smoked Salmon Toppers" />
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <h5 class="fw-bolder">Smoked Salmon Toppers</h5>
-                    $40.00
-                </div>
-            </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- Notification Element -->
+    <div id="notification" class="notification">Item added to cart!</div>
 
+    <!-- Section for Food Categories -->
+    <section class="py-5" id="food-section">
+        <div class="container px-4 px-lg-5 mt-5">
+            <h2 id="wet-food">Wet Food</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <!-- Wet Food Products -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/wetfoodall.jpg" alt="Wet Food">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Wet Food Product</h5>
+                                ₱200.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/wetfood.jpg" alt="Beef Wet Food">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Beef Wet Food</h5>
+                                ₱250.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/liverwetfood.jpg" alt="Liver Wet Food">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Liver Wet Food</h5>
+                                ₱300.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/cknwetfood.jpg" alt="Chicken Wet Food">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Chicken Wet Food</h5>
+                                ₱280.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<h2 id="treats">Treats</h2>
+            <h2 id="dry-food">Dry Food</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <!-- Dry Food Products -->
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/dryfoodall.jpg" alt="Dry Food">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Dry Food Product</h5>
+                                ₱280.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/beefjerkydf.jpg" alt="Freeze Dried Jerky">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Freeze Dried Jerky</h5>
+                                ₱350.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/foodtopper.jpg" alt="Grain-Free Dry Food">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Smoked Salmon Toppers</h5>
+                                ₱200.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/foodtop.jpg" alt="Chicken Dry Food">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Dried Toppers</h5>
+                                ₱270.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="treats">Treats</h2>
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     <!-- Treats Item 1: Dog Biscuits -->
     <div class="col mb-5">
         <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\milkbne.jpg" alt="Dog Biscuits" />
+            <img class="card-img-top" src="images/milkbne.jpg" alt="Dog Biscuits" />
             <div class="card-body p-4">
                 <div class="text-center">
                     <h5 class="fw-bolder">Dog Biscuits</h5>
-                    $12.00
+                    ₱280.00
                 </div>
             </div>
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
             </div>
         </div>
     </div>
+
     <!-- Treats Item 2: Dried Beef -->
     <div class="col mb-5">
         <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\driedbeeftreats.jpg" alt="Dried Beef" />
+            <img class="card-img-top" src="images/driedbeeftreats.jpg" alt="Dried Beef" />
             <div class="card-body p-4">
                 <div class="text-center">
                     <h5 class="fw-bolder">Dried Beef</h5>
-                    $15.00
+                    ₱150.00
                 </div>
             </div>
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
             </div>
         </div>
     </div>
+
     <!-- Treats Item 3: Shank Bone -->
     <div class="col mb-5">
         <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\shankbone.jpg" alt="Shank Bone" />
+            <img class="card-img-top" src="images/shankbone.jpg" alt="Shank Bone" />
             <div class="card-body p-4">
                 <div class="text-center">
                     <h5 class="fw-bolder">Shank Bone</h5>
-                    $20.00
+                    ₱270.00
                 </div>
             </div>
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
             </div>
         </div>
     </div>
+
     <!-- Treats Item 4: Denta Stix -->
     <div class="col mb-5">
         <div class="card h-100">
-            <img class="card-img-top" src="C:\Users\Eldreic\OneDrive\Documents\WEBSYS\dentastx.jpg" alt="Denta Stix" />
+            <img class="card-img-top" src="images/dentastx.jpg" alt="Denta Stix" />
             <div class="card-body p-4">
                 <div class="text-center">
                     <h5 class="fw-bolder">Denta Stix</h5>
-                    $8.00
+                    ₱270.00
                 </div>
             </div>
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart()">Add to cart</a></div>
             </div>
         </div>
     </div>
 </div>
 
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function addToCart() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000); // Notification lasts 2 seconds
+        }
+    </script>
+</body>
+</html>
