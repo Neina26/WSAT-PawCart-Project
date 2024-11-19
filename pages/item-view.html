@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>[Item Name] | PawCart</title>
+        <title>Lavender Bliss Shaving Cream | PawCart</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -39,7 +39,7 @@
                                 <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="#1">Food</a></li>
-                                <li><a class="dropdown-item" href="../hygiene.html">Hygiene</a></li>
+                                <li><a class="dropdown-item" href="categories/hygiene/hygiene.html">Hygiene</a></li>
                                 <li><a class="dropdown-item" href="#1">Tools</a></li>
                                 <li><a class="dropdown-item" href="#1">Toys</a></li>
                                 <li><a class="dropdown-item" href="#1">Supplements</a></li>
@@ -83,7 +83,7 @@
                                 <div class="row">
                                   <div class="col-md-6 justify-content-center">
                                     <!-- Product Image -->
-                                    <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="Apple iPad 9th Generation" class="img-fluid">
+                                    <img id="shown_image" src="../images/hygiene/grooming_products/lavender_bliss_shaving_cream.png" alt="Apple iPad 9th Generation" class="img-fluid">
                                   </div>
                                   <div class="col-md-6">
                                     <!-- Product Details -->
@@ -108,27 +108,34 @@
                                   <!--Product Gallery-->
                                   <div class="p-2 pt-0 border-top-0 bg-transparent mt-3 col-md-6">
                                     <div class="d-flex justify-content-center">
-                                        <button class="btn btn-sm" type="button">
-                                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="product_image" style="width: 70px; height: 50px;" />
+                                        <button class="btn btn-sm" type="button" onclick="change_image('image0')">
+                                            <img id="image0" src="../images/hygiene/grooming_products/lavender_bliss_shaving_cream.png" alt="product_image" style="width: 70px; height: 50px;" />
                                           </button>
-                                          <button class="btn btn-sm" type="button">
-                                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="product_image" style="width: 70px; height: 50px;" />
+                                          <button class="btn btn-sm" type="button" onclick="change_image('image1')">
+                                            <img id="image1" src="../images/item_view/lavender_bliss_shaving_cream/1.png" alt="product_image" style="width: 70px; height: 50px;" />
                                           </button>
-                                          <button class="btn btn-sm" type="button">
-                                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="product_image" style="width: 70px; height: 50px;" />
+                                          <button class="btn btn-sm" type="button" onclick="change_image('image2')">
+                                            <img id="image2" src="../images/item_view/lavender_bliss_shaving_cream/2.png" alt="product_image" style="width: 70px; height: 50px;" />
                                         </button>
-                                        <button class="btn btn-sm" type="button">
-                                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="product_image" style="width: 70px; height: 50px;" />
+                                        <button class="btn btn-sm" type="button" onclick="change_image('image3')">
+                                            <img id="image3" src="../images/item_view/lavender_bliss_shaving_cream/3.png" alt="product_image" style="width: 70px; height: 50px;" />
                                         </button>
-                                        <button class="btn btn-sm" type="button">
-                                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="product_image" style="width: 70px; height: 50px;" />
+                                        <button class="btn btn-sm" type="button" onclick="change_image('image4')">
+                                            <img id="image4" src="../images/item_view/lavender_bliss_shaving_cream/4.png" alt="product_image" style="width: 70px; height: 50px;" />
                                         </button>
+                                        <script>
+                                          function change_image(image_id) {
+                                            var image = document.getElementById(image_id);
+                                            var shown_image = document.getElementById('shown_image');
+                                            shown_image.src = image.src; 
+                                          }
+                                        </script>
                                       </div>
                                   </div>
                                   <!-- Product actions-->
                             <div class="p-2 pt-0 border-top-0 bg-transparent mt-3  col-md-6 justify-content-center">
-                                <span><a class="btn btn-outline-dark mt-auto" href="#">Add to PawCart</a></span>
-                                <span"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></span>
+                                <span><a class="btn btn-outline-dark mt-auto" href="../pages/shoppingcart.html">Add to PawCart</a></span>
+                                <span"><a class="btn btn-outline-dark mt-auto" href="../pages/payment/payment.html">Purchase</a></span>
                             </div>
                             
                                 </div>
