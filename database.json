@@ -20,5 +20,11 @@
     "name": "test2",
     "email": "quitay.anthony@gmail.com",
     "password": "12345"
+  },
+  {
+    "id": 5,
+    "name": "admin",
+    "email": "anthonyquitay2@gmail.com",
+    "password": "12345"
   }
 ]
